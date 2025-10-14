@@ -1,4 +1,4 @@
-# 🧠 GraphQL Workshop — Service-Oriented Architecture (SOA)
+#GraphQL Workshop — Service-Oriented Architecture (SOA)
 
 
 ---
