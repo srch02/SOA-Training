@@ -2,12 +2,14 @@ package graphql;
 
 // Import the business logic class responsible for managing "UniteEnseignement" data
 import business.UniteEnseignementBusiness;
+import business.ModuleBusiness;
 
 // Import the GraphQL library class used to define the root of GraphQL queries
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
 
 // Import the entity class that represents a Teaching Unit (Unité d’Enseignement)
 import entities.UniteEnseignement;
+import entities.Module;
 
 import java.util.List;
 
@@ -21,6 +23,7 @@ public class QueryResolver implements GraphQLRootResolver {
 
     // Attribute used to call the business logic layer (service) for data operations
     public UniteEnseignementBusiness helper;
+    public ModuleBusiness moduleBusiness;
 
     /**
      * Constructor of the resolver.
@@ -28,8 +31,32 @@ public class QueryResolver implements GraphQLRootResolver {
      */
     public QueryResolver(){
         helper = new UniteEnseignementBusiness();
+        moduleBusiness = new ModuleBusiness();
     }
 
+    public UniteEnseignement ueByCode(int code) {
+        return helper.getUEByCode(code);
+    }
+
+    public List<UniteEnseignement> ueByDomaine(String domaine) {
+        return helper.getUEByDomaine(domaine);
+    }
+
+    public List<UniteEnseignement> ueBySemestre(int semestre) {
+        return helper.getUEBySemestre(semestre);
+    }
+
+    public List<Module> allModules() {
+        return moduleBusiness.getAllModules();
+    }
+
+    public Module moduleByMatricule(String matricule) {
+        return moduleBusiness.getModuleByMatricule(matricule);
+    }
+
+    public List<Module> modulesByType(Module.TypeModule type) {
+        return moduleBusiness.getModulesByType(type);
+    }
     /**
      * GraphQL Query: allUEs
      *
@@ -53,4 +80,6 @@ public class QueryResolver implements GraphQLRootResolver {
         // which fetches all UE entities (e.g., from a database or a static list)
         return helper.getListeUE();
     }
+
+
 }

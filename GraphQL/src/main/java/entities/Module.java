@@ -8,7 +8,7 @@ public class Module {
     private TypeModule type;
     private UniteEnseignement uniteEnseignement; // Référence vers l'UE associée
     public Module(){}
-    // Constructeur
+
     public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type) {
         this.matricule = matricule;
         this.nom = nom;
@@ -24,14 +24,14 @@ public class Module {
         this.type = type;
         this.uniteEnseignement=uniteEnseignement;
     }
-    // Enumération TypeModule
+
     public enum TypeModule {
         TRANSVERSAL,
         PROFESSIONNEL,
         RECHERCHE
     }
 
-    // Getters et Setters
+
     public String getMatricule() {
         return matricule;
     }
