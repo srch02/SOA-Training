@@ -88,7 +88,7 @@ You are required to:
  ┃ ┃ ┣ 📂 java
  ┃ ┃ ┃ ┣ 📂 com.esprit.graphql
  ┃ ┃ ┃ ┃ ┣ 📂 entity
- ┃ ┃ ┃ ┃ ┣ 📂 repository
+ ┃ ┃ ┃ ┃ ┣ 📂 business
  ┃ ┃ ┃ ┃ ┣ 📂 graphql
  ┃ ┃ ┃ ┃ ┣ 📜 GraphQLEndPoint.java
  ┃ ┃ ┣ 📂 resources
